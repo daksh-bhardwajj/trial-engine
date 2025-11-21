@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/run-triggers?token=iffiwgfnwinvwigfewgvdfi",
+      "schedule": "*/10 * * * *"
+    }
+  ]
+}
