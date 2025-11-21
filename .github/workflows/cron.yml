@@ -1,0 +1,12 @@
+name: Trigger Cron
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # every 10 minutes
+
+jobs:
+  run-cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call cron endpoint
+        run: curl -s https://trial-engine.vercel.app/api/cron/run-triggers?token=iffiwgfnwinvwigfewgvdfi

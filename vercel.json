@@ -1,8 +1,0 @@
-{
-  "crons": [
-    {
-      "path": "/api/cron/run-triggers",
-      "schedule": "*/10 * * * *"
-    }
-  ]
-}
