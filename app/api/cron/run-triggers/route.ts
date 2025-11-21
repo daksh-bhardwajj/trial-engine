@@ -45,12 +45,12 @@ export async function GET(req: NextRequest) {
 
     // Users whose first_seen_at is older than cutoff
     // AND last_seen_at == first_seen_at (never came back)
-    const { data: users, error: usersError } = await supabase
-      .from("trial_users")
-      .select("*")
-      .eq("project_id", trigger.project_id)
-      .lte("first_seen_at", cutoff)
-      .filter("last_seen_at", "eq", "first_seen_at"); // simple equality comparison
+ const { data: users, error: usersError } = await supabase
+  .from("trial_users")
+  .select("*")
+  .eq("project_id", trigger.project_id)
+  .lte("last_seen_at", cutoff); // just inactive based on last_seen_at
+ 
 
     if (usersError) {
       console.error("CRON: error fetching users", usersError);
