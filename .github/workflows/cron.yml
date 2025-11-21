@@ -1,0 +1,14 @@
+name: Trigger Trial Engine Cron
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # every 10 minutes
+  workflow_dispatch:         # allow manual run
+
+jobs:
+  call-cron-endpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call cron endpoint
+        run: |
+          curl -v "https://trial-engine.vercel.app/api/cron/run-triggers?token=iffiwgfnwinvwigfewgvdfi"
