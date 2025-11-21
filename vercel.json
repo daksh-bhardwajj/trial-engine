@@ -1,7 +1,7 @@
 {
   "crons": [
     {
-      "path": "/api/cron/run-triggers?token=iffiwgfnwinvwigfewgvdfi",
+      "path": "/api/cron/run-triggers",
       "schedule": "*/10 * * * *"
     }
   ]
