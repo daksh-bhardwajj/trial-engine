@@ -115,7 +115,7 @@ export async function GET(req: NextRequest) {
 
       try {
         await resend.emails.send({
-          from: "Trial Engine <noreply@trialengine.dev>",
+          from: "Trial Engine <onboarding@resend.dev>",
           to: user.email,
           subject: trigger.email_subject,
           html: trigger.email_body,
